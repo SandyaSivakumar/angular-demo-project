@@ -7,6 +7,8 @@ import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { UserItemComponent } from './user-item/user-item.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { FormElementComponent } from './form-element/form-element.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { TableBasicComponent } from './table-basic/table-basic.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { FormElementComponent } from './form-element/form-element.component';
     HelloWorldComponent,
     UserItemComponent,
     UserListComponent,
-    FormElementComponent
+    FormElementComponent,
+    TableBasicComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
