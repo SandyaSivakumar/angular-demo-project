@@ -1,0 +1,12 @@
+.header_bottom_line
+{
+    background: #fff;
+    border-bottom: 5px solid #0c95f5;
+    padding: 6px 30px;
+    height: 74px;
+    display: block;
+    color: #fff;
+    font-family: roboto,sans-serif;
+}
+
+
