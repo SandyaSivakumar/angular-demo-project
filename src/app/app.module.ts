@@ -10,6 +10,7 @@ import { FormElementComponent } from './form-element/form-element.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ResultTableComponent } from './result-table/result-table.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SoftwareService } from './service/software.service';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [SoftwareService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,1 +1,24 @@
-
+<div class="card my-5">
+  <div class="card-body">
+    <table class="table table-bordered table-striped">
+      <thead class="thead-dark">
+      <tr>
+        <th scope="col">SoftwareID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Language</th>
+        <th scope="col">Date Created</th>
+        <th scope="col">Owner</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let software of softwares">
+        <td>{{ software.softwareId }}</td>
+        <td>{{ software.softwareName }}</td>
+        <td>{{ software.languageUsed }}</td>
+        <td>{{ software.createdDate }}</td>
+        <td>{{ software.owner }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
