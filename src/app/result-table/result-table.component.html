@@ -1,24 +1,73 @@
-<div class="card my-5">
-  <div class="card-body">
-    <table class="table table-bordered table-striped">
-      <thead class="thead-dark">
-      <tr>
-        <th scope="col">SoftwareID</th>
-        <th scope="col">Name</th>
-        <th scope="col">Language</th>
-        <th scope="col">Date Created</th>
-        <th scope="col">Owner</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let software of softwares">
-        <td>{{ software.softwareId }}</td>
-        <td>{{ software.softwareName }}</td>
-        <td>{{ software.languageUsed }}</td>
-        <td>{{ software.createdDate }}</td>
-        <td>{{ software.owner }}</td>
-      </tr>
-      </tbody>
+<div style="position:relative;
+            margin:1% 20%;
+            width:100%;
+            ">
+  <div style="position:absolute;width:60%;margin-top:8%;">
+
+<!--    <div class="card my-5">-->
+<!--      <div class="card-body">-->
+<!--        <table class="table table-bordered table-striped">-->
+<!--          <thead class="thead-dark">-->
+<!--          <tr>-->
+<!--            <th scope="col">SoftwareID</th>-->
+<!--            <th scope="col">Name</th>-->
+<!--            <th scope="col">Language</th>-->
+<!--            <th scope="col">Date Created</th>-->
+<!--            <th scope="col">Owner</th>-->
+<!--          </tr>-->
+<!--          </thead>-->
+<!--          <tbody>-->
+<!--          <tr *ngFor="let software of softwares">-->
+<!--            <td>{{ software.softwareId }}</td>-->
+<!--            <td>{{ software.softwareName }}</td>-->
+<!--            <td>{{ software.languageUsed }}</td>-->
+<!--            <td>{{ software.createdDate }}</td>-->
+<!--            <td>{{ software.owner }}</td>-->
+<!--          </tr>-->
+<!--          </tbody>-->
+<!--        </table>-->
+<!--      </div>-->
+<!--    </div>-->
+
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Search Software">
+    </mat-form-field>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!-- Position Column -->
+      <ng-container matColumnDef="softwareId">
+        <th mat-header-cell *matHeaderCellDef> Software ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.softwareId}} </td>
+      </ng-container>
+
+      <!-- Name Column -->
+      <ng-container matColumnDef="softwareName">
+        <th mat-header-cell *matHeaderCellDef> Software Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.softwareName}} </td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="languageUsed">
+        <th mat-header-cell *matHeaderCellDef> Language Used </th>
+        <td mat-cell *matCellDef="let element"> {{element.languageUsed}} </td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="createdDate">
+        <th mat-header-cell *matHeaderCellDef> Date Created </th>
+        <td mat-cell *matCellDef="let element"> {{element.createdDate}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="owner">
+        <th mat-header-cell *matHeaderCellDef> Owner </th>
+        <td mat-cell *matCellDef="let element"> {{element.owner}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
   </div>
 </div>
+
+

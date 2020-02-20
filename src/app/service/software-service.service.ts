@@ -8,13 +8,12 @@ import { Observable } from 'rxjs';
 })
 export class SoftwareServiceService {
   public swUrl: string;
-  public http: HttpClient;
-  constructor() {
+  constructor(public http: HttpClient) {
     this.swUrl = "http://localhost:8080/software";
    }
 
   public findAll(): Observable<Software[]> {
-      console.log(this.swUrl);
+      console.log(this.http);
       return this.http.get<Software[]>(this.swUrl);
     }
 }
