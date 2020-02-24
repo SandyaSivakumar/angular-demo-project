@@ -16,12 +16,14 @@ import { MatInput } from '@angular/material/input'
 })
 
 export class ResultTableComponent implements OnInit{
-  displayedColumns: string[] = ['softwareId','softwareName', 'languageUsed', 'createdDate', 'owner'];
+  displayedColumns: string[] = ['softwareId','softwareName', 'languageUsed', 'createdDate', 'owner','views'];
   softwares: Software[];
   dataSource: MatTableDataSource<Software>;
 
+
 //     @ViewChild(MatPaginator) paginator: MatPaginator;
 //     @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
 
     constructor(public softwareService:SoftwareServiceService) {
 
@@ -33,8 +35,10 @@ export class ResultTableComponent implements OnInit{
               console.log(data);
               this.softwares = data;
               this.dataSource = new MatTableDataSource(this.softwares);
+              this.dataSource.paginator = this.paginator;
+
             });
-//         this.dataSource.paginator = this.paginator;
+
 //         this.dataSource.sort = this.sort;
 
     }

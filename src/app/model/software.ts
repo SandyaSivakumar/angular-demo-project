@@ -4,4 +4,6 @@ export class Software {
   languageUsed:string;
   createdDate:string;
   owner:string;
+  description:string;
+  views:number;
 }

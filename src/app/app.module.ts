@@ -16,9 +16,11 @@ import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatCardModule} from '@angular/material/card';
 
 
 import '@angular/compiler';
+import { DescriptionTabComponent } from './description-tab/description-tab.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import '@angular/compiler';
     HelloWorldComponent,
     FormElementComponent,
     NavbarComponent,
-    ResultTableComponent
+    ResultTableComponent,
+    DescriptionTabComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ import '@angular/compiler';
     MatPaginatorModule,
     MatSortModule,
     MatFormFieldModule,
+    MatCardModule,
     MatInputModule
   ],
   providers: [SoftwareServiceService],

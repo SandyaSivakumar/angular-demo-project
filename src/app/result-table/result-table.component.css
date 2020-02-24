@@ -26,3 +26,12 @@ table {
   .mat-column-action {
     flex: 0 0 100px;
   }
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+td[_ngcontent-kfq-c3], th[_ngcontent-kfq-c3]{
+  width:20%;
+}
