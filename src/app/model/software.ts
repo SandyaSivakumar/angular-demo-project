@@ -4,6 +4,8 @@ export class Software {
   languageUsed:string;
   createdDate:string;
   owner:string;
-  description:string;
+  application:string;
+  service:string;
+  serviceOwner:string;
   views:number;
 }

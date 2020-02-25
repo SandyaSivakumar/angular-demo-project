@@ -2,7 +2,7 @@
             margin:1% 20%;
             width:100%;
             ">
-  <div style="position:absolute;width:60%;margin-top:8%;">
+  <div style="position:absolute;width:60%;margin-top:1%;margin-left:5%;">
 
     <mat-form-field>
       <input matInput (keyup)="applyFilter($event)" placeholder="Search Software">
@@ -37,7 +37,7 @@
 
       <ng-container matColumnDef="views">
         <th mat-header-cell *matHeaderCellDef style="width:20%;" > Views </th>
-        <td mat-cell *matCellDef="let element" style="width:20%;" id="ViewValue">
+        <td mat-cell *matCellDef="let element" style="width:20%;">
             {{element.views}}
         </td>
       </ng-container>
@@ -47,11 +47,12 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns" style="background-color:#e8e8e8;"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="getRecord(row)" ></tr>
     </table>
-    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    <mat-paginator [pageSizeOptions]="[10, 20, 5]" showFirstLastButtons></mat-paginator>
 
-    <app-description-tab [description]="myDescription"></app-description-tab>
+    <app-description-tab [application]="myApplication" [service]="myService" [serviceOwner]="myServiceOwner"></app-description-tab>
   </div>
 
 </div>
+
 
 

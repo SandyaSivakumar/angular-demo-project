@@ -18,7 +18,9 @@ import { MatInput } from '@angular/material/input'
 export class ResultTableComponent implements OnInit{
   displayedColumns: string[] = ['softwareId','softwareName', 'languageUsed', 'createdDate', 'owner','views'];
   softwares: Software[];
-  myDescription:string;
+  myApplication:string;
+  myService:string;
+  myServiceOwner:string;
   dataSource: MatTableDataSource<Software>;
   postdata:Software;
   spresp:any;
@@ -47,16 +49,20 @@ export class ResultTableComponent implements OnInit{
             this.dataSource.filter = filterValue.trim().toLowerCase();
           }
         getRecord(row){
-          this.myDescription = row.description;
+          console.log(row.application);
+          this.myApplication = row.application;
+          this.myService = row.service;
+          this.myServiceOwner = row.serviceOwner;
+          console.log(this.myApplication);
           this.updateViewsOnclick(row.softwareId);
 
         }
         updateViewsOnclick(id:String){
-          this.softwareService.updateViews(id, this.postdata)
+          this.softwareService.updateViews(id)
                      .subscribe(resp => {
-                       console.log(this.spresp.views);
-                       return this.spresp.push(resp);
-
+                       console.log(resp.views);
+                       this.postdata = resp;
+                       this.ngOnInit();
                      });
         }
 }

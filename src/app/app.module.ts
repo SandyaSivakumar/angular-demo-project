@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { FormElementComponent } from './form-element/form-element.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ResultTableComponent } from './result-table/result-table.component';
@@ -17,20 +16,22 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import '@angular/compiler';
 import { DescriptionTabComponent } from './description-tab/description-tab.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HelloWorldComponent,
     FormElementComponent,
     NavbarComponent,
     ResultTableComponent,
-    DescriptionTabComponent
+    DescriptionTabComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +44,8 @@ import { DescriptionTabComponent } from './description-tab/description-tab.compo
     MatSortModule,
     MatFormFieldModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    NgbModule
   ],
   providers: [SoftwareServiceService],
   bootstrap: [AppComponent]

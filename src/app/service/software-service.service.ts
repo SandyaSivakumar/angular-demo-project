@@ -19,10 +19,11 @@ export class SoftwareServiceService {
       return this.http.get<Software[]>(this.swUrl);
     }
 
-    public updateViews(softwareId: String, software: Software): Observable<Software> {
-      return this.http.put<Software>(this.localUrl + softwareId, software);
+    public updateViews(softwareId: String): Observable<Software> {
+      return this.http.post<Software>(this.localUrl + softwareId,null);
   }
 }
+
 
 
 

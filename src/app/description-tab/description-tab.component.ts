@@ -7,7 +7,9 @@ import {MatCard} from '@angular/material/card';
   styleUrls: ['./description-tab.component.css']
 })
 export class DescriptionTabComponent implements OnInit {
-  @Input() description:string;
+  @Input() application:string;
+  @Input() service:string;
+  @Input() serviceOwner:string;
   constructor() { }
 
   ngOnInit(): void {
