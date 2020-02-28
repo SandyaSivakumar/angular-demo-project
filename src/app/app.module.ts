@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FormElementComponent } from './form-element/form-element.component';
+import { FormElementComponent,NgbdModalContent } from './form-element/form-element.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ResultTableComponent } from './result-table/result-table.component';
 import { HttpClientModule, HttpClient, HttpHeaders } from '@angular/common/http';
@@ -17,10 +17,15 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import '@angular/compiler';
 import { DescriptionTabComponent } from './description-tab/description-tab.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ChartsModule } from 'ng2-charts';
+import { PieChartComponent } from './pie-chart/pie-chart.component';
+import {MatButtonModule} from '@angular/material/button';
+import { StackedChartComponent } from './stacked-chart/stacked-chart.component';
+
+
 
 
 
@@ -31,7 +36,10 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     NavbarComponent,
     ResultTableComponent,
     DescriptionTabComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    PieChartComponent,
+    NgbdModalContent,
+    StackedChartComponent
   ],
   imports: [
     BrowserModule,
@@ -42,13 +50,16 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
+    MatButtonModule,
+    ChartsModule,
     MatFormFieldModule,
     MatCardModule,
     MatInputModule,
     NgbModule
   ],
   providers: [SoftwareServiceService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent,FormElementComponent],
+  entryComponents: [NgbdModalContent]
 })
 export class AppModule { }
 

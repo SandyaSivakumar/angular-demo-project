@@ -8,4 +8,5 @@ export class Software {
   service:string;
   serviceOwner:string;
   views:number;
+  linesOfCode:number;
 }

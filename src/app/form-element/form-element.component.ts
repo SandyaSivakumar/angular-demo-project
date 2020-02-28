@@ -1,15 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
+import {MatButton} from '@angular/material/button';
+import { NgbActiveModal, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { PieChartComponent } from '../pie-chart/pie-chart.component';
+
+@Component({
+  selector: 'ngbd-modal-content',
+  template: `
+    <div class="modal-header">
+      <h4 class="modal-title">Hi there!</h4>
+      <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <p>Hello, {{name}}!</p>
+      <app-pie-chart></app-pie-chart>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Close</button>
+    </div>
+  `
+})
+export class NgbdModalContent {
+  @Input() name;
+
+  constructor(public activeModal: NgbActiveModal) {}
+}
 
 @Component({
   selector: 'app-form-element',
-  templateUrl: './form-element.component.html',
-  styleUrls: ['./form-element.component.css']
+   templateUrl: './form-element.component.html',
 })
-export class FormElementComponent implements OnInit {
+export class FormElementComponent {
+  constructor(private modalService: NgbModal) {}
 
-  constructor() { }
-
-  ngOnInit(): void {
+  open() {
+    const modalRef = this.modalService.open(NgbdModalContent);
+    modalRef.componentInstance.name = 'World';
   }
-
 }

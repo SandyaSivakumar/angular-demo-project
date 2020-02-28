@@ -1,18 +1,30 @@
 
 <mat-card style = "box-shadow:0px 2px 1px 2px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);">
-  <mat-card-header>
-    <mat-card-title>Software Details</mat-card-title>
-  </mat-card-header>
+
   <mat-card-content style="padding:16px;">
-    <p>
-    {{application}}
-    </p>
-    <p>
-      {{service}}
-    </p>
-    <p>
-      {{serviceOwner}}
-    </p>
+
+      <img src="{{src}}" style="width:15%;margin-bottom:2%;">
+
+        <div style="width:80%;float:right;">
+          <p style="margin-bottom:2%;font-size:1.5rem">Software Details</p>
+        <table class="table table-bordered table-striped" >
+          <tr>
+            <th>Application</th>
+            <td>{{application}}</td>
+          </tr>
+
+          <tr>
+            <th>Service</th>
+            <td>{{service}}</td>
+          </tr>
+
+          <tr>
+            <th>Service Owner</th>
+            <td>{{ serviceOwner }}</td>
+          </tr>
+
+        </table>
+        </div>
   </mat-card-content>
 </mat-card>
 
